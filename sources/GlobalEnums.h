@@ -1,0 +1,22 @@
+//
+// Created by haduluoke on 10/10/19.
+//
+
+#ifndef XIONGDIMAJIANGGAMESERVER_GLOBALENUMS_H
+#define XIONGDIMAJIANGGAMESERVER_GLOBALENUMS_H
+
+enum TileType {
+    BING,
+    TIAO,
+    WAN,
+    DONG,
+    LAN,
+    XI,
+    BEI,
+    HONGZHONG,
+    FACAI,
+    BAIBAN,
+    FLOWER,
+};
+
+#endif //XIONGDIMAJIANGGAMESERVER_GLOBALENUMS_H

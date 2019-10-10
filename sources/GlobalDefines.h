@@ -1,0 +1,12 @@
+//
+// Created by haduluoke on 10/10/19.
+//
+
+#ifndef XIONGDIMAJIANGGAMESERVER_GLOBALDEFINES_H
+#define XIONGDIMAJIANGGAMESERVER_GLOBALDEFINES_H
+
+#include <cstdint>
+
+typedef uint8_t TileNum;
+
+#endif //XIONGDIMAJIANGGAMESERVER_GLOBALDEFINES_H
