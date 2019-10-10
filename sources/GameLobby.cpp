@@ -23,7 +23,7 @@ int GameLobby::createRoom() {
     // TODO add no extra room catch
     bool addRoomResult = addRoom(rNumber);
     if (addRoomResult) return rNumber;
-    else return FAILED;
+    return FAILED;
 }
 
 bool GameLobby::addRoom(int rNumber) {
