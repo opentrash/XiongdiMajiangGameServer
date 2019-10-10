@@ -14,7 +14,10 @@ int GameLobby::createRoom() {
         rNumber = generateRandomNumber(from, to);
         bool rNumberExisted = false;
         for (const auto& room : rooms) {
-            if (room.first == rNumber) rNumberExisted = true;
+            if (room.first == rNumber) {
+                rNumberExisted = true;
+                break;
+            }
         }
         if (!rNumberExisted) break;
     }
@@ -27,13 +30,10 @@ int GameLobby::createRoom() {
 }
 
 bool GameLobby::addRoom(int rNumber) {
-    if (roomCount < ROOM_QUANTITY) {
-        rooms[rNumber] = Room { rNumber };
-        roomCount++;
-        return true;
-    } else {
-        return false;
-    }
+    if (roomCount >= ROOM_QUANTITY) return false;
+    rooms[rNumber] = Room { rNumber };
+    roomCount++;
+    return true;
 }
 
 Room GameLobby::getRoom(int rNumber) {
