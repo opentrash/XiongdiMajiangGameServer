@@ -32,7 +32,6 @@ private:
     void printTiles();
     void initTiles();
     void shuffleTiles();
-
 };
 
 
