@@ -7,6 +7,8 @@
 
 #include <cstdint>
 
+#define FAILED -1
+
 typedef uint8_t TileNum;
 
 #endif //XIONGDIMAJIANGGAMESERVER_GLOBALDEFINES_H

@@ -4,14 +4,14 @@
 
 #include "Room.h"
 
-Room::Room() {
+Room::Room(int __rNumber): _rNumber(__rNumber) {
+    std::cout << "create a room with number:" << __rNumber << std::endl;
     initTiles();
     shuffleTiles();
-    printTiles();
+//    printTiles();
 }
 
 void Room::initTiles() {
-
     int tilePos = 0;
 
     // init tiao, bing, wan
@@ -46,6 +46,10 @@ void Room::printTiles() {
 }
 
 void Room::shuffleTiles() {
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    unsigned seed = randomSeed();
     shuffle(tiles.begin(), tiles.end(), std::default_random_engine(seed));
+}
+
+int Room::roomNumber() const {
+    return _rNumber;
 };

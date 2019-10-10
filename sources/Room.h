@@ -13,20 +13,26 @@
 
 #include "Tile.h"
 #include "GlobalEnums.h"
+#include "utils.h"
 
 class Room {
 public:
-    Room();
+    Room() = default;
+    explicit Room(int __rNumber);
+    int roomNumber() const;
 private:
     static constexpr int TILE_TOTAL_QUANTITY = 144;  // count of majiang tiles
     static constexpr int NORMAL_TILE_KINDS = 3;         // bing tiao wan
     static constexpr int SPECIAL_TILE_KINDS = 3;            // zhong fa bai
     static constexpr int WIND_TILE_KINDS = 4;               // dong nan xi bei
-    static constexpr  int FLOWER_QUANTITY = 8;          // count of flowers
-    const int TILE_ONE_TYPE_QUANTITY = 9;              // count of every type
-    const int TILE_REPEAT = 4;                   // repeat of each tile
+    static constexpr int FLOWER_QUANTITY = 8;          // count of flowers
+    static const int TILE_ONE_TYPE_QUANTITY = 9;              // count of every type
+    static const int TILE_REPEAT = 4;                   // repeat of each tile
 
-    std::array<Tile, TILE_TOTAL_QUANTITY> tiles;
+    std::array<Tile, TILE_TOTAL_QUANTITY> tiles{};
+
+    // room number
+    int _rNumber;
 
 private:
     void printTiles();
