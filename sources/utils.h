@@ -14,10 +14,9 @@ inline unsigned randomSeed() {
 
 template <typename T>
 T generateRandomNumber(T from, T to) {
-    unsigned seed = randomSeed();
-    std::default_random_engine generator { seed };
+    std::random_device rd;
     std::uniform_real_distribution<T> distribution { from, to };
-    return distribution(generator);
+    return distribution(rd);
 }
 
 template <>

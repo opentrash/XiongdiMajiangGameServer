@@ -2,12 +2,13 @@
 // Created by haduluoke on 10/10/19.
 //
 
+#include <random>
+
 #include "utils.h"
 
 template <>
 int generateRandomNumber(int from, int to) {
-    unsigned seed = randomSeed();
-    std::default_random_engine generator { seed };
+    std::random_device rd;
     std::uniform_int_distribution<int> distribution { from, to };
-    return distribution(generator);
+    return distribution(rd);
 }

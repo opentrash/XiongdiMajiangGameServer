@@ -2,9 +2,14 @@
 // Created by haduluoke on 10/10/19.
 //
 
-#include "Room.h"
+#include <iostream>
+#include <algorithm>    // std::shuffle
 
-Room::Room(int rNumber): _rNumber(rNumber) {
+#include "Room.h"
+#include "utils.h"
+#include "GlobalEnums.h"
+
+Room::Room(const std::string& rNumber): _rNumber(rNumber) {
     std::cout << "create a room with number:" << rNumber << std::endl;
     initTiles();
     shuffleTiles();
@@ -50,6 +55,6 @@ void Room::shuffleTiles() {
     shuffle(tiles.begin(), tiles.end(), std::default_random_engine(seed));
 }
 
-int Room::roomNumber() const {
+std::string Room::roomNumber() const {
     return _rNumber;
 };

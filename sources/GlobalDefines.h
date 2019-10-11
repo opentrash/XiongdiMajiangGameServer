@@ -7,7 +7,7 @@
 
 #include <cstdint>
 
-#define FAILED -1
+#define FAILED "FAILED"
 
 typedef uint8_t TileNum;
 

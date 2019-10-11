@@ -6,20 +6,14 @@
 #define XIONGDIMAJIANGGAMESERVER_ROOM_H
 
 #include <array>
-#include <iostream>
-#include <random>
-#include <chrono>    // system_clock
-#include <algorithm>    // std::shuffle
 
 #include "Tile.h"
-#include "GlobalEnums.h"
-#include "utils.h"
 
 class Room {
 public:
     Room() = default;
-    explicit Room(int rNumber);
-    int roomNumber() const;
+    explicit Room(const std::string& rNumber);
+    std::string roomNumber() const;
 private:
     static constexpr int TILE_TOTAL_QUANTITY = 144;  // count of majiang tiles
     static constexpr int NORMAL_TILE_KINDS = 3;         // bing tiao wan
@@ -32,7 +26,7 @@ private:
     std::array<Tile, TILE_TOTAL_QUANTITY> tiles{};
 
     // room number
-    int _rNumber;
+    std::string _rNumber {  };
 
 private:
     void printTiles();
