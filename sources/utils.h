@@ -20,7 +20,6 @@ T generateRandomNumber(T from, T to) {
     return distribution(generator);
 }
 
-
 template <>
 int generateRandomNumber(int from, int to);
 

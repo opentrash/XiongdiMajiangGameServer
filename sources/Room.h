@@ -18,7 +18,7 @@
 class Room {
 public:
     Room() = default;
-    explicit Room(int __rNumber);
+    explicit Room(int rNumber);
     int roomNumber() const;
 private:
     static constexpr int TILE_TOTAL_QUANTITY = 144;  // count of majiang tiles

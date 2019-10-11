@@ -4,8 +4,8 @@
 
 #include "Room.h"
 
-Room::Room(int __rNumber): _rNumber(__rNumber) {
-    std::cout << "create a room with number:" << __rNumber << std::endl;
+Room::Room(int rNumber): _rNumber(rNumber) {
+    std::cout << "create a room with number:" << rNumber << std::endl;
     initTiles();
     shuffleTiles();
 //    printTiles();

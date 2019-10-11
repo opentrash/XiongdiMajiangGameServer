@@ -23,7 +23,7 @@ public:
     Tile(): _type(BING), _num(0) {  }
 
     explicit
-    Tile(TileType __type, TileNum __num): _type(__type), _num(__num) {  }
+    Tile(TileType type, TileNum num): _type(type), _num(num) {  }
 
     friend
     std::ostream& operator<<(std::ostream& os, const Tile& tile);
