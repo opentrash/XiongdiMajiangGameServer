@@ -13,7 +13,7 @@ Room::Room(const std::string& rNumber): _rNumber(rNumber) {
     std::cout << "create a room with number:" << rNumber << std::endl;
     initTiles();
     shuffleTiles();
-//    printTiles();
+    printTiles();
 }
 
 void Room::initTiles() {
@@ -51,8 +51,7 @@ void Room::printTiles() {
 }
 
 void Room::shuffleTiles() {
-    unsigned seed = randomSeed();
-    shuffle(tiles.begin(), tiles.end(), std::default_random_engine(seed));
+    shuffle(tiles.begin(), tiles.end(), std::random_device());
 }
 
 std::string Room::roomNumber() const {
