@@ -9,6 +9,10 @@
 #include "utils.h"
 #include "GlobalEnums.h"
 
+/*
+ * constructor for Room
+ * TODO players
+ */
 Room::Room(const std::string& rNumber): _rNumber(rNumber) {
     std::cout << "create a room with number:" << rNumber << std::endl;
     initTiles();
@@ -16,6 +20,9 @@ Room::Room(const std::string& rNumber): _rNumber(rNumber) {
     printTiles();
 }
 
+/*
+ * init tiles with 144 tiles
+ */
 void Room::initTiles() {
     int tilePos = 0;
 
@@ -44,16 +51,25 @@ void Room::initTiles() {
 
 }
 
+/*
+ * print all tiles in the format [type, num]
+ */
 void Room::printTiles() {
     for (const Tile& tile : tiles) {
         std::cout << tile << std::endl;
     }
 }
 
+/*
+ * shuffle tiles
+ */
 void Room::shuffleTiles() {
     shuffle(tiles.begin(), tiles.end(), std::random_device());
 }
 
+/*
+ * get roomNumber
+ */
 std::string Room::roomNumber() const {
     return _rNumber;
 };
