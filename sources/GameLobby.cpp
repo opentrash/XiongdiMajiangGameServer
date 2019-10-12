@@ -21,7 +21,7 @@ bool GameLobby::addRoom(const std::string& rNumber) {
     return true;
 }
 
-Room GameLobby::getRoom(const std::string& rNumber) {
+Room& GameLobby::getRoom(const std::string& rNumber) {
     return rooms.at(rNumber);
 }
 

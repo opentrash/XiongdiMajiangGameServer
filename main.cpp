@@ -15,7 +15,8 @@ int main() {
     }
     std::cout << "room number:" << rN << std::endl;
 
-    Room room = lobby.getRoom(rN);
+    Room& room = lobby.getRoom(rN);
     std::cout << "actual room number:" << room.roomNumber() << std::endl;
+
     return 0;
 }

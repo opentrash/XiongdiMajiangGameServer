@@ -20,7 +20,7 @@ private:
 public:
     GameLobby() = default;
     std::string createRoom();
-    Room getRoom(const std::string& rNumber);
+    Room& getRoom(const std::string& rNumber);
 
 private:
     bool addRoom(const std::string& rNumber);
