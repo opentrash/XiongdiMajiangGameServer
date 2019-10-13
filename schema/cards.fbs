@@ -1,0 +1,67 @@
+namespace XD;
+
+enum CardClass : uint8 {
+	Wind   = 0x00,
+	Dragon = 0x10,
+	Bonus  = 0x20,
+	Bing   = 0x30,
+	Tiao   = 0x40,
+	Wan    = 0x50,
+}
+
+enum CardFace : uint8 {
+	Wind_N   = 0x00,
+	Wind_E,
+	Wind_S,
+	Wind_W,
+
+	Dragon_R = 0x10,
+	Dragon_G,
+	Dragon_W,
+
+	Bonus_C  = 0x20,
+	Bonus_X,
+	Bonus_Q,
+	Bonus_D,
+	Bonus_M,
+	Bonus_L,
+	Bonus_Z,
+	Bonus_J,
+
+	Bing_1   = 0x30,
+	Bing_2,
+	Bing_3,
+	Bing_4,
+	Bing_5,
+	Bing_6,
+	Bing_7,
+	Bing_8,
+	Bing_9,
+
+	Tiao_1   = 0x40,
+	Tiao_2,
+	Tiao_3,
+	Tiao_4,
+	Tiao_5,
+	Tiao_6,
+	Tiao_7,
+	Tiao_8,
+	Tiao_9,
+
+	Wan_1    = 0x50,
+	Wan_2,
+	Wan_3,
+	Wan_4,
+	Wan_5,
+	Wan_6,
+	Wan_7,
+	Wan_8,
+	Wan_9,
+
+}
+
+struct Card {
+	face: CardFace;
+	id: uint8;
+}
+
