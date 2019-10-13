@@ -8,7 +8,8 @@
 
 template <>
 int generateRandomNumber(int from, int to) {
-    std::random_device rd;
+//    std::random_device rd;
+    std::default_random_engine rg {randomSeed()};
     std::uniform_int_distribution<int> distribution { from, to };
-    return distribution(rd);
+    return distribution(rg);
 }

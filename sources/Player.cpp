@@ -5,11 +5,13 @@
 #include "Player.h"
 
 Player::Player() {
-    formHands(14);
+    handsNumber = 3;
+    formHands();
+    sortHands();
 }
 
 // for test only
-void Player::formHands(int handsNumber) {
+void Player::formHands() {
     std::array<int, 35> tileId {};
 
     int tilePos = 0;
@@ -29,7 +31,6 @@ void Player::formHands(int handsNumber) {
     int chooseTilePos = 0;
     while (handsCount < handsNumber) {
         chooseTilePos = generateRandomNumber(0, 34);
-        std::cout << chooseTilePos << std::endl;
         if (hands.find(tileId[chooseTilePos]) == hands.end()){
             hands[tileId[chooseTilePos]] = 0;
         }
@@ -38,7 +39,47 @@ void Player::formHands(int handsNumber) {
             handsCount += 1;
         }
     }
-    for(auto& h : hands) {
-        std::cout << h.first << ": " << h.second << std::endl;
+}
+
+void Player::sortHands(){
+    int *sortedHands = new int(handsNumber);
+    int tilesPos = 0;
+    for (const auto& handsTilePointer: hands){
+        for (int tileNum=0; tileNum< handsTilePointer.second; tileNum++){
+            sortedHands[tilesPos++] = handsTilePointer.first;
+        }
     }
+    std::sort(sortedHands, sortedHands+handsNumber);
+    for (int pos=0; pos<tilesPos; pos++){
+        std::cout << "[" << TileTypeNames[sortedHands[pos]/10] << "," << sortedHands[pos]%10 << "]" << std::endl;
+    }
+    delete[] sortedHands;
+}
+
+int Player::draw(int drawTileId){
+    if (hands.find(drawTileId) == hands.end()){
+        hands[drawTileId] = 0;
+    }
+    hands[drawTileId] += 1;
+    handsNumber += 1;
+    if (hands[drawTileId] > 4){
+        std::cout << "invalid draw: tile number is greater than 4!" << std::endl;
+        return -1;
+    }
+    return 0;
+
+}
+
+int Player::discard(int discardTileId) {
+    if (hands.find(discardTileId) == hands.end()){
+        std::cout << "invalid discard: no tile in hands!" << std::endl;
+        return -1;
+    }
+    if (hands[discardTileId] < 1){
+        std::cout << "invalid discard: no tile in hands!" << std::endl;
+        return -1;
+    }
+    hands[discardTileId] -= 1;
+    handsNumber -= 1;
+    return 0;
 }
