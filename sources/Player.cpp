@@ -60,12 +60,12 @@ int Player::draw(int drawTileId){
     if (hands.find(drawTileId) == hands.end()){
         hands[drawTileId] = 0;
     }
-    hands[drawTileId] += 1;
-    handsNumber += 1;
-    if (hands[drawTileId] > 4){
+    if (hands[drawTileId] > 3){
         std::cout << "invalid draw: tile number is greater than 4!" << std::endl;
         return -1;
     }
+    hands[drawTileId] += 1;
+    handsNumber += 1;
     return 0;
 
 }
