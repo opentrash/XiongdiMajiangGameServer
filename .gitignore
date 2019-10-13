@@ -41,5 +41,8 @@ gen
 *.out
 *.app
 
+# Build dir
 cmake-build-*/
+build/*
+!build/.keep
 
