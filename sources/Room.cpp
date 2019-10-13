@@ -37,7 +37,7 @@ void Room::initTiles() {
     }
 
     // init dong nan xi bei & zhong fa bai
-    const std::array<TileType, WIND_TILE_KINDS + SPECIAL_TILE_KINDS> windAndSpecialTileTypes { DONG, LAN, XI, BEI, HONGZHONG, FACAI, BAIBAN };
+    const std::array<TileType, WIND_TILE_KINDS + SPECIAL_TILE_KINDS> windAndSpecialTileTypes { DONGFENG, NANFENG, XIFENG, BEIFENG, HONGZHONG, FACAI, BAIBAN };
     for (const auto& tileType : windAndSpecialTileTypes) {
         for (size_t repeat = 0; repeat < TILE_REPEAT; repeat++) {
             tiles[tilePos++] = Tile { tileType, 1 };
